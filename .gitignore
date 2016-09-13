@@ -172,8 +172,9 @@ void addStudent(ClassRoll student[], int &limit)
 {
 
 	string name;
-	cout << "First Name: ";
-	cin >> name;
+	cout << "Full Name: ";
+	cin.ignore();
+	getline(cin, name);
 	if (name.length() > 40)
 	{
 		cerr << "Error: The name you entered must not exceed 40 characters!" << endl;
