@@ -264,10 +264,13 @@ void deleteStudent(ClassRoll student[100], int limit)
 void saveStudentData(ClassRoll students[], int limit)
 {
 	ofstream myfile;
-	myfile.open("StudentRecord.txt", ios::out);
+	myfile.open("StudentRecord.txt", ios::ios_base::app);
 
 	for (int x = 0; x <= a; x++)
 	{
+		if (students[x].grade_Essay1 > 4 || students[x].grade_Essay1 < 0) {
+			break;
+		}
 		myfile << students[x].name << " " << students[x].usfID << " " << students[x].usfEmail << " "
 			<< students[x].grade_Essay1 << " " << students[x].grade_Essay2 << " "
 			<< students[x].grade_termProject << endl;
